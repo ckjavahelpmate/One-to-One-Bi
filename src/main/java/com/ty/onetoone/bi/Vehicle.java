@@ -2,6 +2,7 @@ package com.ty.onetoone.bi;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +22,7 @@ public class Vehicle {
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
-	@OneToOne(cascade =  CascadeType.ALL )
+	@OneToOne(cascade =  CascadeType.ALL,fetch = FetchType.LAZY )
 	@JoinColumn
 	private Chassis chassis ;
 	public int getId() {

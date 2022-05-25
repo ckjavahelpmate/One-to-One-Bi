@@ -1,6 +1,7 @@
 package com.ty.onetoone.bi;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,7 +13,7 @@ public class Chassis {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id ;
 	private String number ;
-	@OneToOne(mappedBy = "chassis")
+	@OneToOne(mappedBy = "chassis",fetch = FetchType.LAZY)
 	private Vehicle vehicle ;
 	public int getId() {
 		return id;
